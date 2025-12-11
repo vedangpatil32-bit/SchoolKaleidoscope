@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emerging Technology and Digital Infrastructure</title>
+
+<!-- Digital Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* GENERAL STYLING */
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-style: normal;
+    background-image: url("https://wallpapers.com/images/hd/neon-purple-futuristic-city-xl3t56rpdqq3vqig.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* PARTICLES BACKGROUND */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    z-index: -3; /* behind everything */
+    pointer-events: none;
+    background: transparent;
+}
+
+/* TEXT OUTLINE */
+h1, .navbar a, .crawl {
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+}
+
+/* PAGE TITLE */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #ffffffee;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    animation: hologramGlow 3s infinite alternate;
+    margin: 0;
+    padding: 6px 0;
+}
+
+@keyframes hologramGlow {
+    0% { text-shadow: 0 0 10px #8a2eff, 0 0 20px #ff00ff; opacity: 0.8; }
+    100% { text-shadow: 0 0 30px #5c13e4, 0 0 60px #b80db8; opacity: 1; }
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    background: linear-gradient(to right, #e100ffad, #000000);
+    padding: 16px;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px #7b00ff;
+    z-index: 50;
+}
+
+.navbar a {
+    color: rgb(149, 38, 223);
+    font-size: 20px;
+    font-family: inherit;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff;
+    text-decoration: none;
+}
+
+.navbar a i {
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover i {
+    transform: rotate(20deg) scale(1.3);
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #cc66ff, 0 0 25px #ff99ff;
+}
+
+/* STAR WARS TEXT SECTION */
+.star-wars-container {
+    position: absolute;
+    top: 160px;
+    left: 300px;
+    width: calc(100% - 300px);
+    height: calc(100vh - 160px);
+    perspective: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 40;
+}
+
+.crawl {
+    font-size: 40px;
+    font-weight: 900;
+    width: 65%;
+    text-align: center;
+    color: aqua;
+    transform-origin: 50% 100%;
+    position: absolute;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hologramEffect 3s infinite alternate;
+    color: aqua;
+}
+
+.crawl.gradient { background: transparent; -webkit-text-fill-color: transparent; }
+.crawl.white { -webkit-text-fill-color: rgba(14, 16, 112, 0.658) !important; color: rgba(14,16,112,0.658); }
+
+@keyframes hologramEffect {
+    0% { filter: drop-shadow(0 0 5px #ff66ff); opacity: 0.9; }
+    100% { filter: drop-shadow(0 0 15px #cc00ff); opacity: 1; }
+}
+
+@keyframes crawlAnimation {
+    0%   { transform: rotateX(25deg) translateY(100%); opacity: 1; }
+    100% { transform: rotateX(25deg) translateY(-250%); opacity: 0; }
+}
+
+/* -------------------------------------------------
+        LEFT HORIZONTAL SCROLLER
+-------------------------------------------------- */
+.side-image-frame {
+    width: 440px;
+    height: 75vh;
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #3a005e, #000000);
+    padding: 6px;
+    position: absolute;
+    top: 150px;
+    left: 15px;
+    z-index: 1000; /* above canvas */
+}
+
+.image-slider {
+    display: flex;
+    gap: 8px;
+    transition: transform 1s ease; /* smooth sliding */
+    will-change: transform;
+}
+
+.image-slider a, .image-slider img {
+    display: block;
+}
+
+.image-slider a img, .image-slider img {
+    width: 440px; /* explicit px to calculate offset reliably */
+    height: calc(75vh - 20px);
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+
+   
+</style>
+</head>
+
+<body>
+    
+
+    <!-- BACKGROUND MUSIC (keeps original tag, looped) -->
+    <audio id="bgmusic" autoplay loop>
+        <source src="c:\Users\sharv\Downloads\secrets-of-the-jedi-inspired-by-star-wars-331637.mp3" type="audio/mp3">
+    </audio>
+
+<canvas id="particles"></canvas>
+
+<h1>Emerging Technology and Digital Infrastructure Of Rising India</h1>
+
+<div class="navbar">
+    <a href="governmentfinal.html"><i class="fas fa-landmark"></i>Government</a>
+    <a href="quantumfinal.html"><i class="fas fa-atom"></i>Quantum Computing</a>
+    <a href=""><i class="fas fa-camera"></i>Virtual Photobooth</a>
+    <a href="Final_Chatbot.html"><i class="fas fa-robot"></i>Chatbot</a>
+    <a href="test.html"><i class="fas fa-question"></i>Quiz and Games</a>
+    <a href="finalegov.html"><i class="fas fa-globe"></i>E-Governence</a>
+</div>
+
+<!-- LEFT IMAGE FRAME -->
+<div class="side-image-frame">
+    <div class="image-slider" id="imageSlider">
+        <a href="agri.html"><img src="https://ideogram.ai/assets/progressive-image/balanced/response/sJUvHy-HSgWuWGT3xA48sw" alt=""></a>
+        <a href="manufac.html"><img src="https://ideogram.ai/assets/progressive-image/balanced/response/g2NZN1DVSjiGBjuuteq-9A" alt=""></a>
+        <a href="finance.html"><img src="https://ideogram.ai/assets/image/lossless/response/xoYQ9Fc5Qr2QGY0oHdX_rA" alt=""></a>
+        <a href="logistics.html"><img src="https://ideogram.ai/assets/image/lossless/response/KXF9sbUnSZynwomaypYb8w" alt=""></a>
+        <a href="emerging tech.html"><img src="https://ideogram.ai/assets/image/lossless/response/sQTMQSs0StGXcf6Wun8RVA" alt=""></a>
+        <a href="digital infra.html"><img src="https://ideogram.ai/assets/image/lossless/response/yq7ukdbxSKOSABqL_b1OmA" alt=""></a>
+        <a href="education and skill.html"><img src="https://ideogram.ai/assets/image/lossless/response/vQTsYzThSEWEbeuBVAe3QQ" alt=""></a>
+        <a href="healthcare.html"><img src="https://ideogram.ai/assets/image/thumbnail/response/l82ElP2dQmeHsgNXuIVJlw" alt=""></a>
+        <a href="trade.html"><img src="https://ideogram.ai/assets/image/lossless/response/nedag0Y7Q5Wmqdj-oEOBaQ" alt=""></a>
+        <a href="social.html"><img src="https://ideogram.ai/assets/progressive-image/balanced/response/uvV9OC5hTwiP6AoIU8eFtw" alt=""></a>
+        <a href="quiz2.html"><img src="https://ideogram.ai/assets/image/lossless/response/2XvIa1yyRH2gXIHhXXpJ1Q" alt=""></a>
+        <a href="test.html"><img src="https://ideogram.ai/assets/progressive-image/balanced/response/c3_T_juCTt-fP5c5oflGrw" alt=""></a>
+        <a href="Final_Chatbot.html"><img src="https://ideogram.ai/assets/image/lossless/response/OP7vPuZNTtaWz9qVjhhcKA" alt=""></a>
+        <a href=""><img src="https://ideogram.ai/assets/image/lossless/response/r9Zw2YPLQV22ivv92KWkDg" alt=""></a>
+        <a href="quantomfinal.html"><img src="https://ideogram.ai/assets/image/lossless/response/vZgbAoIfTMWwQjQXkK4-0w" alt=""></a>
+        <a href="finalegov.html"><img src="https://www.fairobserver.com/wp-content/uploads/2022/01/Metavserse-2000x1200.jpg" alt=""></a>
+    </div>
+</div>
+
+<div class="star-wars-container">
+    <div id="crawlText" class="crawl gradient"></div>
+</div>
+
+
+<script>
+
+/* ------------------- STAR WARS SLIDES ------------------- */
+const slides = [
+    "Emerging technology refers to innovative tools and systems such as artificial intelligence, robotics, blockchain, biotechnology, and quantum computing.",
+    "Digital infrastructure includes high-speed internet, cloud platforms, data centers, and secure networks. It is the backbone of modern technology.",
+    "Together, emerging tech and digital infrastructure are reshaping the world—from smart cities to self-driving cars and advanced healthcare.",
+    `THANK YOU FOR USING THIS WEBSITE.<br>
+    THIS WEBSITE WAS CREATED BY STUDENTS OF CLASS 8.<br>
+    SPECIAL THANKS TO EVERYONE WHO HELPED THIS WEBSITE COME TO LIFE.<br>
+    WEBSITE TEMPLATE - ANAY AND SHARVA<br>
+    STORYBOARDS - ADHRIT<br>
+    GAMES - SUKHMEET AND ADHRIT<br>
+    CHATBOT - VEDANG<br>
+    VIRTUAL PHOTOBOOTH- VEDANG<BR>
+    THANK YOU`
+];
+
+let index = 0;
+const crawl = document.getElementById("crawlText");
+const crawlDuration = 35000;
+
+function playSlide() {
+    crawl.style.animation = "none";
+    void crawl.offsetWidth;
+
+    if (index < 3) {
+        crawl.classList.remove("white");
+        crawl.classList.add("gradient");
+    } else {
+        crawl.classList.remove("gradient");
+        crawl.classList.add("white");
+    }
+
+    crawl.innerHTML = slides[index];
+    crawl.style.animation = `crawlAnimation ${crawlDuration}ms linear`;
+
+    index = (index + 1) % slides.length;
+    setTimeout(playSlide, crawlDuration);
+}
+playSlide();
+/* ------------------ PARTICLES (EVEN INDIAN TRICOLOR, SWIRLING + BRIGHT + TWINKLE) ------------------ */
+const canvas = document.getElementById("particles");
+const c = canvas.getContext("2d");
+
+function resizeCanvas(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+
+const tricolor = [
+    "#FF9933", // Saffron
+    "#FFFFFF", // White
+    "#138808"  // Green
+];
+
+let stars = [];
+const STAR_COUNT = 600; // increased particle count
+
+function createStars(){
+  stars = [];
+  const perColor = Math.floor(STAR_COUNT / tricolor.length);
+
+  tricolor.forEach(color => {
+    for(let i = 0; i < perColor; i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 0.5, // slightly bigger
+        speed: 0.2 + Math.random() * 0.8,
+        color: color,
+        angle: Math.random() * Math.PI * 2, // sway angle
+        swaySpeed: 0.01 + Math.random() * 0.02, // sway speed
+        swayAmplitude: 10 + Math.random() * 20, // sway amplitude
+        glowPhase: Math.random() * Math.PI * 2, // for glowing
+        twinklePhase: Math.random() * Math.PI * 2 // for twinkling
+      });
+    }
+  });
+
+  // Shuffle stars array
+  for (let i = stars.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [stars[i], stars[j]] = [stars[j], stars[i]];
+  }
+}
+createStars();
+
+function animateStars() {
+    c.clearRect(0, 0, canvas.width, canvas.height);
+
+    stars.forEach(s => {
+        // Dynamic glow + twinkle
+        const glow = 10 + Math.sin(s.glowPhase) * 15; // brighter shadow
+        const alphaBase = 0.7 + Math.sin(s.glowPhase) * 0.3; // brighter base
+        const twinkle = 0.2 * Math.sin(s.twinklePhase); // small flicker
+        const alpha = Math.min(Math.max(alphaBase + twinkle, 0), 1); // clamp 0-1
+
+        s.glowPhase += 0.02;
+        s.twinklePhase += 0.1; // twinkle faster
+
+        c.beginPath();
+        c.fillStyle = s.color;
+        c.globalAlpha = alpha;
+        c.shadowBlur = glow;
+        c.shadowColor = s.color;
+        c.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        c.fill();
+        c.globalAlpha = 1; // reset alpha
+
+        // Move vertically
+        s.y += s.speed;
+
+        // Horizontal swaying
+        s.angle += s.swaySpeed;
+        s.x += Math.sin(s.angle) * s.swayAmplitude * 0.01;
+
+        // Reset if off bottom
+        if (s.y > canvas.height) {
+            s.y = 0;
+            s.x = Math.random() * canvas.width;
+        }
+
+        // Wrap horizontally
+        if (s.x > canvas.width) s.x = 0;
+        if (s.x < 0) s.x = canvas.width;
+    });
+
+    requestAnimationFrame(animateStars);
+}
+animateStars();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  createStars();
+  recalcSlider();
+});
+
+
+
+/* ------------------ LEFT SLIDER JS ------------------ */
+const slider = document.getElementById('imageSlider');
+const slidesArr = Array.from(slider.children);
+let currentIndex = 0;
+const GAP = 8;
+const SLIDE_WIDTH = 440; // same as CSS
+
+function showNextSlide() {
+    currentIndex = (currentIndex + 1) % slidesArr.length;
+    const offset = (SLIDE_WIDTH + GAP) * currentIndex;
+    slider.style.transform = `translateX(-${offset}px)`;
+}
+
+let sliderInterval = setInterval(showNextSlide, 1500); // 1.5s pause per image
+
+// helper to recalc if window resized
+function recalcSlider(){
+  // ensure currentIndex doesn't overflow when fewer slides show
+  currentIndex = Math.min(currentIndex, slidesArr.length - 1);
+  const offset = (SLIDE_WIDTH + GAP) * currentIndex;
+  slider.style.transition = 'none';
+  slider.style.transform = `translateX(-${offset}px)`;
+  // restore transition after a tick
+  requestAnimationFrame(()=> slider.style.transition = 'transform 1s ease');
+}
+recalcSlider();
+
+</script>
+
+
+</script>
+<!-- ✅ NEW AUDIO TAG ADDED HERE — PLAYING ON LOOP -->
+<audio autoplay loop hidden>
+    <source src="c:\Users\sharv\Downloads\secrets-of-the-jedi-inspired-by-star-wars-331637.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
